@@ -35,7 +35,7 @@ const workoutSchema = new mongoose.Schema({
 });
 
 workoutSchema.virtual('fullName').get(function() {
-    return this.exercises[0].weight + this.exercises[0].reps;
+    return this.date + "new date";
   });
 workoutSchema.virtual('totalDuration').get(function() {
     return this.exercises.reduce((acc, curr) => {

@@ -12,8 +12,13 @@ router.get("/api/workouts", async (req, res) => {
 
 router.get("/api/workouts/range", async (req, res) => {
   try {
-    const data = await Workout.find({}).limit(7);
-    res.json(data);
+    const data = await Workout.find({})//.sort({date: -1}).limit(7);
+    const sortedDate = data.sort(function(a,b){
+      // Turn your strings into dates, and then subtract them
+      // to get a value that is either negative, positive, or zero.
+      return new Date(b.date) - new Date(a.date);
+    }).reverse().splice(0, 7)
+    res.json(sortedDate);
   } catch (err) {
     console.log(err);
   }
