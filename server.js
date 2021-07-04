@@ -2,7 +2,7 @@ const express = require("express")
 const morgan = require("morgan")
 const mongoose = require("mongoose")
 const workoutRoutes = require("./routes/workoutRoutes")
-const path = require("path")
+const htmlRoutes = require("./routes/htmlRoutes")
 
 const app = express()
 
@@ -18,16 +18,9 @@ mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true, u
 .then(() => console.log("db connected"))
 .catch(err => console.log(err))
 
+app.use(htmlRoutes)
 app.use(workoutRoutes)
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "./public/index.html"))
-})
-app.get("/stats", (req, res) => {
-    res.sendFile(path.join(__dirname, "./public/stats.html"))
-})
-app.get("/exercise", (req, res) => {
-    res.sendFile(path.join(__dirname, "./public/exercise.html"))
-})
+
 
 
 app.listen(PORT, () => console.log("app running on " + PORT))
