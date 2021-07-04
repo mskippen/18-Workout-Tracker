@@ -1,6 +1,6 @@
 # Workout Tracker
 
-Link to the deployed application can be tested here on Heroku: [Workout Tracker](xxx) and the project repository can be viewed here: [Workout Tracker](https://github.com/mskippen/18-Workout-Tracker.git).
+Link to the deployed application can be tested here on Heroku: [Workout Tracker](https://mongomegan.herokuapp.com/) and the project repository can be viewed here: [Workout Tracker](https://github.com/mskippen/18-Workout-Tracker.git).
 
 ## Description
 
