@@ -12,7 +12,7 @@ router.get("/api/workouts", async (req, res) => {
 
 router.get("/api/workouts/range", async (req, res) => {
   try {
-    const data = await Workout.find({});
+    const data = await Workout.find({}).limit(7);
     res.json(data);
   } catch (err) {
     console.log(err);
